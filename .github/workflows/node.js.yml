@@ -18,5 +18,8 @@ jobs:
           mkdir test
           cd test
           git clone git@github.com:aannkur/nodetest.git
-          echo 'Done'
+          cd nodetest
+             - run: npm install
+             - run: npm install pm2 -g
+             - run: pm2 start Index.js
 
