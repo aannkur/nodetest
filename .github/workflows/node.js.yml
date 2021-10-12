@@ -11,7 +11,7 @@ jobs:
         name: Use Node.js ${{ matrix.node-version }}
         with:
          host: ${{secrets.SSH_HOST}}
-         password: ${{secrets.SSH_PASSWORD}}
+         key: ${{secrets.SSH_KEY}}
          username: ${{secrets.SSH_USERNAME}}
 
          secript:
