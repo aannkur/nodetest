@@ -18,6 +18,7 @@ jobs:
           rm -rf test
           mkdir test
           cd test 
+          git clone git@github.com:aannkur/nodetest.git
           git pull git@github.com:aannkur/nodetest.git master
              - run: npm install
              - run: npm install pm2 -g
