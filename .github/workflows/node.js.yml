@@ -23,5 +23,5 @@ jobs:
            source ~/.nvm/nvm.sh
               npm install
               npm install pm2 -g
-              pm2 start Index.js
+              pm2 restart Index.js
 
