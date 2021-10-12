@@ -2,24 +2,23 @@ name: Build & Deploy
 on:
   push:
    branches: [master]
-
-   job:
-    deploy:
+   
+jobs:
+  deploy:
      runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-       host: ${{secrets.SSH_HOST}}
-       password: ${{secrets.SSH_PASSWORD}}
-       username: ${{secrets.SSH_USERNAME}}
+     steps:
+      - uses: actions/checkout@v2
+        name: Use Node.js ${{ matrix.node-version }}
+        with:
+         host: ${{secrets.SSH_HOST}}
+         password: ${{secrets.SSH_PASSWORD}}
+         username: ${{secrets.SSH_USERNAME}}
 
-       secript:
-         mkdir test
-         cd test
-         git clone git@github.com:aannkur/nodetest.git
-    - run: npm install --if-present
-    - run: npm install pm2 -g
-    - run: pm2 start Index.js
-    - run: pm2 restart Index.js
+         secript:
+          mkdir test
+          cd test
+          git clone git@github.com:aannkur/nodetest.git
+      - run: npm install --if-present
+      - run: npm install pm2 -g
+      - run: pm2 start Index.js
+      - run: pm2 restart Index.js
