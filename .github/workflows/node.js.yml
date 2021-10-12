@@ -15,8 +15,6 @@ jobs:
          username: ${{secrets.SSH_USERNAME}}
 
          script: |
-          rm -rf test
-          mkdir test
           cd test/nodetest
           git pull git@github.com:aannkur/nodetest.git master
              - run: npm install
