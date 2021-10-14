@@ -11,7 +11,7 @@ jobs:
         name: executing remote ssh commands using password
         with:
          host: ${{secrets.SSH_HOST}}
-         key: ${{secrets.SSH_KEY}}
+         password: ${{secrets.SSH_PASSWORD}}
          username: ${{secrets.SSH_USERNAME}}
 
          script: |
